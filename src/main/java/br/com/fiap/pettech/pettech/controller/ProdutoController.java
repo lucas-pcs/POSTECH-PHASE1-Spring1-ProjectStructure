@@ -1,5 +1,6 @@
 package br.com.fiap.pettech.pettech.controller;
 
+import br.com.fiap.pettech.pettech.dto.ProdutoDTO;
 import br.com.fiap.pettech.pettech.service.ProdutoService;
 import br.com.fiap.pettech.pettech.entities.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,23 +19,23 @@ public class ProdutoController {
     private ProdutoService service;
 
     @GetMapping
-    public ResponseEntity<Collection<Produto>> findAll(){
+    public ResponseEntity<Collection<ProdutoDTO>> findAll(){
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> findById(@PathVariable UUID id){
+    public ResponseEntity<ProdutoDTO> findById(@PathVariable UUID id){
         return ResponseEntity.ok(service.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto) {
-        return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(service.save(produto));
+    public ResponseEntity<ProdutoDTO> save(@RequestBody ProdutoDTO produtoDTO) {
+        return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(service.save(produtoDTO));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Produto> update(@PathVariable UUID id, @RequestBody Produto produto){
-        return ResponseEntity.ok(service.update(id, produto));
+    public ResponseEntity<ProdutoDTO> update(@PathVariable UUID id, @RequestBody ProdutoDTO produtoDTO){
+        return ResponseEntity.ok(service.update(id, produtoDTO));
     }
 
     @DeleteMapping("/{id}")
