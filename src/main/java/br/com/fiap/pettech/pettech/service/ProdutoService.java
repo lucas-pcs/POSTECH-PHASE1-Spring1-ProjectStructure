@@ -1,11 +1,13 @@
-package br.com.fiap.pettech.pettech;
+package br.com.fiap.pettech.pettech.service;
 
+import br.com.fiap.pettech.pettech.controller.exception.ControllerNotFoundException;
+import br.com.fiap.pettech.pettech.entities.Produto;
+import br.com.fiap.pettech.pettech.repository.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service

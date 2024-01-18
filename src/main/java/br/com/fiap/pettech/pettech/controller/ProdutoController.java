@@ -1,12 +1,13 @@
-package br.com.fiap.pettech.pettech;
+package br.com.fiap.pettech.pettech.controller;
 
+import br.com.fiap.pettech.pettech.service.ProdutoService;
+import br.com.fiap.pettech.pettech.entities.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.Optional;
 import java.util.UUID;
 
 @RestController

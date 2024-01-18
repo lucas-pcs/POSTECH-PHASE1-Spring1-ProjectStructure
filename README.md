@@ -1,1 +1,1 @@
-# POSTECH-PHASE1-Spring1-SpringBoot
+# POSTECH-PHASE1-Spring1-ProjectStructure
